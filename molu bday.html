@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Riya Molu 💖</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{overflow:hidden;}
+
+.section{
+width:100vw;height:100vh;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;padding:25px;
+position:absolute;top:0;left:100%;
+opacity:0;transition:.6s;
+}
+.section.active{left:0;opacity:1;}
+.section.exit{left:-100%;opacity:0;}
+
+h1{font-size:2rem;line-height:1.4;margin-bottom:20px;}
+p{font-size:1.1rem;max-width:700px;line-height:1.7;}
+
+button{
+margin-top:20px;padding:12px 28px;
+border:none;border-radius:30px;
+background:#ff4d88;color:white;
+cursor:pointer;
+}
+.backBtn{background:#888;}
+
+@media(max-width:600px){
+h1{font-size:1.5rem;}
+p{font-size:1rem;}
+}
+
+/* page colors */
+.page1{
+background:url('riya molu pic.jpg') center/cover no-repeat;
+}
+.page1 h1, .page1 p, .page1 button {
+color:#ffffff;
+text-shadow:2px 2px 8px rgba(0,0,0,0.5);
+}
+.page2{background:linear-gradient(135deg,#ffe0f5,#ffd6f0);}
+.page3{background:linear-gradient(135deg,#ffe6ff,#f3d9ff);}
+.page4{background:linear-gradient(135deg,#ffd9ec,#fff0f7);}
+.page5{background:linear-gradient(135deg,#ffe4ec,#ffeaf4);}
+.page6{background:linear-gradient(135deg,#ffd6e8,#ffeef5);}
+.page7{background:linear-gradient(135deg,#ffe0ff,#f9e6ff);}
+.page8{background:linear-gradient(135deg,#ffe6f5,#fff0f9);}
+.page9{background:linear-gradient(135deg,#ffd6e8,#ffe8f3);}
+.page10{background:linear-gradient(135deg,#ffe6ff,#f5e8ff);}
+.page11{background:linear-gradient(135deg,#ffd9ef,#fff0f7);}
+.page12{background:linear-gradient(135deg,#ffe6f0,#ffd6e8);}
+.page13{background:linear-gradient(135deg,#ffd6e8,#ffeef5);}
+
+/* floating background hearts */
+.bg{
+position:fixed;
+bottom:-20px;
+animation:float 7s linear forwards;
+pointer-events:none;
+}
+@keyframes float{
+0%{transform:translateY(0);opacity:0;}
+20%{opacity:1;}
+100%{transform:translateY(-120vh);opacity:0;}
+}
+
+/* hugging teddy */
+.teddy-container{position:relative;height:120px;width:220px;}
+.teddy{font-size:70px;position:absolute;top:20px;}
+.teddy.left{left:0;animation:left 3s infinite;}
+.teddy.right{right:0;animation:right 3s infinite;}
+@keyframes left{50%{transform:translateX(35px) rotate(10deg);}}
+@keyframes right{50%{transform:translateX(-35px) rotate(-10deg);}}
+
+.heart-pop{
+position:absolute;left:50%;top:0;
+transform:translateX(-50%);
+font-size:30px;
+animation:pop 3s infinite;
+}
+@keyframes pop{
+0%,100%{opacity:0;transform:translateX(-50%) scale(0);}
+50%{opacity:1;transform:translateX(-50%) scale(1.4);}
+}
+
+/* heartbeat teddy */
+.beat-container{position:relative;height:220px;width:220px;}
+.big-teddy{font-size:130px;position:absolute;left:50%;transform:translateX(-50%);}
+.blush{position:absolute;font-size:20px;animation:blush 1.5s infinite;}
+.left-blush{left:70px;top:95px;}
+.right-blush{right:70px;top:95px;}
+@keyframes blush{50%{opacity:1;}}
+
+.beat-heart{
+position:absolute;
+left:50%;top:80px;
+transform:translateX(-50%);
+font-size:45px;
+animation:beat 1s infinite;
+}
+@keyframes beat{50%{transform:translateX(-50%) scale(1.4);}}
+
+/* final teddy */
+.tiny-teddy{
+font-size:45px;
+position:fixed;
+bottom:20px;right:20px;
+animation:wave 2s infinite;
+}
+@keyframes wave{
+25%{transform:rotate(15deg);}
+50%{transform:rotate(-15deg);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="bensound-acousticbreeze.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()" style="position:fixed;top:10px;right:10px;z-index:1000;">🎵</button>
+
+<!-- PAGE 1 -->
+<div class="section page1 active">
+<h1>Hi Riya Molu 🤍</h1>
+<p>This little surprise is for the girl who makes my days softer.</p>
+<p>.....I made this for you cuz wanted to see you smile on your day......Enjoy what's coming and don't become emotional until the end 💖</p>
+<div class="teddy-container">
+<div class="teddy left">🧸</div>
+<div class="heart-pop">❤️</div>
+<div class="teddy right">🧸</div>
+</div>
+<button onclick="next()">Start 💖</button>
+</div>
+
+<!-- pages -->
+<div class="section page2"><p>You're honestly the cutest part of my day… and I smile more because of you.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page3"><p>We both overthink a lot… but somehow when it's you, even overthinking feels safe and cute.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page4"><p>The way you feel deeply......that's honestly something I admire about you.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page5"><p>I try to act normal… but inside I'm just smiling like an idiot when I talk to you.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+
+<!-- TEDDY PAGE -->
+<div class="section page6">
+<h1>Just Saying… 💗</h1>
+<div class="beat-container">
+<div class="big-teddy">🧸</div>
+<div class="blush left-blush">💗</div>
+<div class="blush right-blush">💗</div>
+<div class="beat-heart">❤️</div>
+</div>
+<p>Me whenever I see you</p>
+<button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button>
+</div>
+
+<div class="section page7"><p>You understand me in ways,I don't even know how to explain.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page8"><p>Even when I'm stubborn or short tempered… you somehow handle me gently.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page9"><p>Every small moment with you becomes a memory I don't want to forget.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page10"><p>I'm proud of you… even on the days you don't feel proud of yourself.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+<div class="section page11"><p>Through all the randomness and overthinking… I really like having you around.</p><button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Next →</button></div>
+
+<!-- YES NO -->
+<div class="section page12">
+<h1>Will you keep being this amazing person in my life Moluuu? 💘</h1>
+<button id="yesBtn" onclick="next()">YES 💖</button>
+<button id="noBtn">NO 😈</button>
+</div>
+
+<!-- WARNING PAGE -->
+<div class="section page13">
+<h1>⚠️</h1>
+<p>Read this alone…<br><br>What’s coming next is only for you.</p>
+<button onclick="back()" class="backBtn">← Back</button><button onclick="next()">Continue 🤍</button>
+</div>
+
+<!-- FINAL -->
+<div class="section page13">
+<h1>💌</h1>
+<p> Moluuuuuuuuuuuuuuuuuu<br><br>
+ 
+    You don’t have to rush.You're doing better than you think.
+    You are enough just as you are.
+    And you are loved more than you know.
+    And ith oru promise onnumalla cuz nobody can promise anything in life.
+    But I guarantee to always be there for you as long as fate and life allows me to.<br>
+    If u need me u can always reach me. I don’t care about time or place or if I am having my own problem
+    or angry with you I will be there for you.
+    Cuz ninne njan athrem respect and love cheyyunnu ennathanu and niyee undarunullu nte koode when things get
+    real messy and u stayed and tried while some promised and left just like that
+    And you do desere that respect and love. I pray to god that you will be granted with lots of blessing
+    and molu just be ultra careful wherever you go and whatever you do....cuz there is someone always looking
+    at the phone waiting for a message from you. I literally don't know nthaa parayende enn idk how to express it 
+    pinne like I always say you are and will be priceless to me.<br>
+    And remember one more thing molu,
+    You are stronger than you think you are. And you can get through anything life throws at you.
+    Just believe in yourself as much as I believe in you.
+
+    I am so grateful and pray to god  to have you in my life.<br><br>
+
+    HAPPY BIRTHDAY MOLUUUUUU GOD BLESS YOU🎂🎉🎊</p>
+<button onclick="back()" class="backBtn">← Back</button>
+<div class="tiny-teddy">🧸</div>
+</div>
+
+<script>
+let current=0;
+const sections=document.querySelectorAll('.section');
+
+function show(i){
+sections[current].classList.remove('active');
+sections[current].classList.add('exit');
+setTimeout(()=>{
+sections[current].classList.remove('exit');
+sections[i].classList.add('active');
+current=i;
+},300);
+}
+function next(){if(current<sections.length-1)show(current+1);}
+function back(){if(current>0)show(current-1);}
+
+/* floating hearts */
+const icons=["💗","💖","✨","💕","⭐"];
+setInterval(()=>{
+let b=document.createElement("div");
+b.className="bg";
+b.innerText=icons[Math.floor(Math.random()*icons.length)];
+b.style.left=Math.random()*100+"vw";
+b.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(b);
+setTimeout(()=>b.remove(),7000);
+},500);
+
+/* NO button run */
+document.getElementById("noBtn").onmouseenter=function(){
+this.style.transform=`translate(${Math.random()*200-100}px,${Math.random()*200-100}px)`;
+};
+
+/* MUSIC starts first click */
+document.addEventListener("click",()=>{
+const m=document.getElementById("bgMusic");
+if(m.paused)m.play();
+},{once:true});
+
+function toggleMusic(){
+const m=document.getElementById("bgMusic");
+m.paused?m.play():m.pause();
+}
+</script>
+
+</body>
+</html>
